@@ -16,14 +16,19 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-const fruits = [
-	['fruit', 'price', 'header'],
-	['apple', 1.90,],
-	['berry', 1.7],
-	['banana', 1.3],
-	['cherry', 1.2],
-	['pear', 1]
-]
+const fruits = {
+	header:
+		['fruit',
+		'price'],
+	things:
+	[
+		['apple', 1.70,],
+		['berry', 1],
+		['banana', 1.2],
+		['cherry', 1.3],
+		['pear', 1.9]
+	]
+}
 var app = {
     // Application Constructor
     initialize: function() {
@@ -53,12 +58,14 @@ var app = {
 };
 function createTable(object, table){
 	//iterate through object
-	object.forEach(thing => {
+	var row = table.insertRow(-1) //insert header row
+	object.header.forEach(head => {
+		row.classList.add("header") //make header
+		var cell = row.insertCell(-1)
+		cell.innerHTML = head //set value to element in header
+	})
+	object.things.forEach(thing => {
 		var row = table.insertRow(-1) //create row for each element in object
-		if (thing.includes("header")){ //check if first item in list
-			row.classList.add("header")
-			thing = remove(thing, "header") //remove header 
-		} 
 		for (var innerThing in thing){
 			//create cell for each value in object
 			var cell = row.insertCell(-1)
@@ -67,11 +74,29 @@ function createTable(object, table){
 	})
 }
 function initializeDB(){
-	createTable(fruits, lookup("searchResults")); //create table from object
+		dropDown(lookup('sort'), fruits.header)
+		drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value))
 		lookup("search").onkeyup = function(){
 			searchDatabase('searchResults', 'search') //set searchbar to search database
 		}
+		lookup("sort").onchange = function(){
+			drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value))
+		}
 }
+function drawTable(array, table, sorting, ascending = true){
+	table = deleteTable(table) //delete all rows in table
+	array.things.sort(function(a, b){
+		console.log(sorting)
+		if (a[sorting]== b[sorting]) {
+        return 0;
+    }
+    else {
+        return (a[sorting] < b[sorting]) ? -1 : 1; //sort by whichever element is given by dropdown
+    }
+	})
+	createTable(array, table) //create table from object
+}
+
 
 function lookup(id){
 	return document.getElementById(id); //lookup using id
@@ -108,6 +133,19 @@ function remove(obj, thing){
 		obj.splice(index, 1);
 	}
 	return obj
+}
+function dropDown(ele, options) { //make dropdown based on elements
+    ele.length = 0
+    options.forEach(key => {
+        let o = document.createElement("option");
+        o.coin = key;
+        o.text = key;
+        ele.appendChild(o);
+    })
+}
+function deleteTable(table){
+	table.innerHTML = "";
+	return table
 }
 
 
