@@ -16,8 +16,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+html, body {
+    margin: 0;
+    padding: 0;
+	font-family: arial;
+}
 .heading {
 	background-color: #9e9b76;
 	height: 12vh;
-	width: 100%
+	width: 100%;
+	border-style: solid;
+}
+.links {
+	margin: 0;
+	height: 100%;
+	font-size: 100%;
+	border-right: solid;
+	border-left: solid;
+	border-width: small;
+	border-color: black;
+	background-image: linear-gradient(to bottom, #c8ce9c, #807554);
+}
+.tabs {
+	height: 5vh;
+	margin: 0;
+	padding: 0;
+	border-style: solid;
+	background-image: linear-gradient(to bottom, #c8ce9c, #807554);
 }
