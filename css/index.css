@@ -27,6 +27,7 @@ html, body {
 	border-style: solid;
 }
 .links {
+	color: black;
 	font-size: 3.7vmin;
 	border-right: solid;
 	border-left: solid;
