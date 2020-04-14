@@ -27,9 +27,8 @@ html, body {
 	border-style: solid;
 }
 .links {
-	margin: 0;
 	height: 100%;
-	font-size: 100%;
+	font-size: 3vh;
 	border-right: solid;
 	border-left: solid;
 	border-width: small;
