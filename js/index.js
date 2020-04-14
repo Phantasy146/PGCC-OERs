@@ -28,6 +28,7 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+		.orientation.lock('portrait')
     },
 
     // Update DOM on a Received Event
