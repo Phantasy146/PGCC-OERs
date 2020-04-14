@@ -78,7 +78,13 @@ function initializeDB(){
 		dropDown(lookup('sort'), fruits.header)
 		drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value), order)
 		lookup("search").onkeyup = function(){
-			searchDatabase('searchResults', 'search') //set searchbar to search database
+			if (searchDatabase('searchResults', 'search')){ //set searchbar to search database
+				lookup('searchResults').style.display = ""
+				lookup("none").style.display = "none"
+			} else {
+				lookup('none').style.display = ""
+				lookup("searchResults").style.display = "none"
+			}
 		}
 		lookup("sort").onchange = function(){
 			drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value), order)
@@ -123,6 +129,7 @@ function searchDatabase(table, input) {
   input = lookup(input)
   filter = input.value.toUpperCase();
   tr = table.getElementsByTagName("tr");
+  foundAny = false
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
@@ -134,11 +141,13 @@ function searchDatabase(table, input) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
+		foundAny = true
       } else {
         tr[i].style.display = "none";
       }
     }
   }
+  return foundAny
 }
 
 function remove(obj, thing){
