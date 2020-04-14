@@ -35,6 +35,7 @@ html, body {
 	border-color: black;
 	background-image: linear-gradient(to bottom, #c8ce9c, #807554);
 	height: 100%;
+	width: 100%
 }
 .tabs {
 	height: 5vh;
