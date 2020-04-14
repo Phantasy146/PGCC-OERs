@@ -29,6 +29,7 @@ const fruits = {
 		['pear', 1.9]
 	]
 }
+var order = false //false for ascending, true for descending
 var app = {
     // Application Constructor
     initialize: function() {
@@ -75,15 +76,18 @@ function createTable(object, table){
 }
 function initializeDB(){
 		dropDown(lookup('sort'), fruits.header)
-		drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value))
+		drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value), order)
 		lookup("search").onkeyup = function(){
 			searchDatabase('searchResults', 'search') //set searchbar to search database
 		}
 		lookup("sort").onchange = function(){
-			drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value))
+			drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value), order)
+		}
+		lookup("order").onclick = function(){
+			switchOrder()
 		}
 }
-function drawTable(array, table, sorting, ascending = true){
+function drawTable(array, table, sorting, descending = false){
 	table = deleteTable(table) //delete all rows in table
 	array.things.sort(function(a, b){
 		console.log(sorting)
@@ -91,10 +95,20 @@ function drawTable(array, table, sorting, ascending = true){
         return 0;
     }
     else {
-        return (a[sorting] < b[sorting]) ? -1 : 1; //sort by whichever element is given by dropdown
+        return (a[sorting] < b[sorting]) ^ descending ? -1 : 1; //sort by whichever element is given by dropdown
     }
 	})
 	createTable(array, table) //create table from object
+}
+
+function switchOrder(){
+	order = !order
+	if (order){
+		lookup("order").innerHTML = "Descending"
+	} else {
+		lookup("order").innerHTML = "Ascending"
+	}
+	drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value), order)
 }
 
 
