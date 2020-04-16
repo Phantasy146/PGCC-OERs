@@ -212,7 +212,15 @@ function parseDataa(dataParse){ //parse data from spreadsheet
 	}
 	tempData.header = Object.keys(dataParse[0])
 	dataParse.forEach(datum => {
-		tempData.things.push(Object.values(datum));
+		datum = Object.values(datum) //only take values
+		var result = datum.map(function (x) { 
+			if (!isNaN(parseFloat(x))){
+				return parseFloat(x, 10); 
+			} else {
+				return x
+			}
+		});
+		tempData.things.push(result);
 	})
 	return tempData
 }
