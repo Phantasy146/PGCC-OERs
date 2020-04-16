@@ -199,7 +199,6 @@ function initializeSheet(){
 		  }
 
 		  function showInfo(data, tabletop) {
-			alert('Successfully processed!')
 			dataa = data;
 			initializeDB()
 		  }
