@@ -63,8 +63,9 @@ table tr:first-child{
 }
 .searchBox {
 	border: solid;
-	width: 50vw;
-	height:50vh;
+	width: 75vw;
+	height: 75vh;
 	margin: auto;
-	margin-top: 2vh
+	margin-top: 2vh;
+	overflow-y: scroll;
 }

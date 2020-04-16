@@ -26,7 +26,23 @@ const fruits = {
 		['berry', 1],
 		['banana', 1.2],
 		['cherry', 1.3],
-		['pear', 1.9]
+		['pear', 1.9],
+		['guava', 1.5],
+		['lemon', 2],
+		['lime', 0.4],
+		['tomato', 1.6],
+		['papaya', 0.6],
+		['raspberry', 0.7],
+		['blueberry', 1.2],
+		['blackberry', 2.1],
+		['strawberry', 2.2],
+		['dragonfruit', 1.52],
+		['passionfruit', 1.67],
+		['boisenberry', 1.34],
+		['orange', 1.26],
+		['watermelon', 1.58],
+		['canteloupe', 1.43],
+		['honeydew', 1.73]
 	]
 }
 var order = false //false for ascending, true for descending
