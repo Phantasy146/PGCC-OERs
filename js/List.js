@@ -190,7 +190,7 @@ function deleteTable(table){
 	return table
 }
 function initializeSheet(){
-	var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1kpVkIZLgZFwbLaAmKP3QEs1fuznMe0dgQH8SpO4HOoI/edit?usp=sharing';
+	var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1tuI2YaKEc5rzPjww5HIyVZ1NqQG6tQDl4gCUg-whsM4/edit?usp=sharing';
 
 		  function init() {
 			Tabletop.init( { key: publicSpreadsheetUrl,
