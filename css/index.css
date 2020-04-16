@@ -20,6 +20,7 @@ html, body {
     margin: 0;
     padding: 0;
 	font-family: arial;
+	background-color: #f3f3c7;
 }
 .heading {
 	background-color: #9e9b76;
@@ -70,4 +71,11 @@ table tr:first-child{
 	margin: auto;
 	margin-top: 2vh;
 	overflow-y: scroll;
+	overflow-x: hidden;
+	background-color: white;
+}
+.searchBar{
+	display: flex;
+	align-items: right;
+	width: 100%;
 }
