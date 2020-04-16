@@ -208,8 +208,8 @@ function dropDown(ele, options) { //make dropdown based on elements
 			let o = document.createElement("option");
 			o.coin = key;
 			o.text = key;
+			ele.appendChild(o);
 		}
-        ele.appendChild(o);
     })
 }
 function deleteTable(table){
