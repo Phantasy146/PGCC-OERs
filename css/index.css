@@ -47,6 +47,7 @@ html, body {
 table { 
 	border: solid; 
 	border-collapse: collapse; 
+	width: 100%;
 }
 table td { 
 	border-left:solid; 
@@ -59,4 +60,11 @@ table tr{
 }
 table tr:first-child{
 	border-top: none;
+}
+.searchBox {
+	border: solid;
+	width: 50vw;
+	height:50vh;
+	margin: auto;
+	margin-top: 2vh
 }
