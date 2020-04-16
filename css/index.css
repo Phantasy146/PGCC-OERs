@@ -34,7 +34,7 @@ html, body {
 	border-left: solid;
 	border-width: small;
 	border-color: black;
-	background-image: linear-gradient(to bottom, #c8ce9c, #807554);
+	background: linear-gradient(to bottom, #c8ce9c, #807554);
 	height: 100%;
 	max-width: 40%;
 }
@@ -43,7 +43,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	border-style: solid;
-	background-image: linear-gradient(to bottom, #c8ce9c, #807554);
+	background: linear-gradient(to bottom, #c8ce9c, #807554);
 }
 table { 
 	border-top: solid; 
@@ -92,4 +92,15 @@ table tr:first-child{
 	display: flex;
 	width: 100vw;
 	height: 81vh;
+}
+.current {
+	color: black;
+	font-size: 3.7vmin;
+	border-right: solid;
+	border-left: solid;
+	border-width: small;
+	border-color: black;
+	height: 100%;
+	max-width: 40%;
+	background: linear-gradient(to bottom, #cfc05f, #c19e24);
 }
