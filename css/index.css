@@ -45,9 +45,11 @@ html, body {
 	background-image: linear-gradient(to bottom, #c8ce9c, #807554);
 }
 table { 
-	border: solid; 
+	border-top: solid; 
+	border-bottom: solid;
 	border-collapse: collapse; 
 	width: 100%;
+	height: 100%;
 }
 table td { 
 	border-left:solid; 
