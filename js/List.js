@@ -204,9 +204,11 @@ function remove(obj, thing){
 function dropDown(ele, options) { //make dropdown based on elements
     ele.length = 0
     options.forEach(key => {
-        let o = document.createElement("option");
-        o.coin = key;
-        o.text = key;
+		if (key !== "Url"){
+			let o = document.createElement("option");
+			o.coin = key;
+			o.text = key;
+		}
         ele.appendChild(o);
     })
 }
