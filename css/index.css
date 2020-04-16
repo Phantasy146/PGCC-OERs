@@ -88,3 +88,8 @@ table tr:first-child{
 .infoText {
 	margin: 2vw;
 }
+.form {
+	display: flex;
+	width: 100vw;
+	height: 81vh;
+}
