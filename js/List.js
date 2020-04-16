@@ -45,12 +45,14 @@ const fruits = {
 		['honeydew', 1.73]
 	]
 }
+var data = {};
+var dataa;
 var order = false //false for ascending, true for descending
 var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-		initializeDB()
+		initializeSheet();
     },
 
     // deviceready Event Handler
@@ -91,8 +93,9 @@ function createTable(object, table){
 	})
 }
 function initializeDB(){
-		dropDown(lookup('sort'), fruits.header)
-		drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value), order)
+		data = parseDataa(dataa)
+		dropDown(lookup('sort'), data.header)
+		drawTable(data, lookup("searchResults"), data.header.indexOf(lookup("sort").value), order)
 		lookup("search").onkeyup = function(){
 			if (searchDatabase('searchResults', 'search')){ //set searchbar to search database
 				lookup('searchResults').style.display = ""
@@ -103,7 +106,7 @@ function initializeDB(){
 			}
 		}
 		lookup("sort").onchange = function(){
-			drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value), order)
+			drawTable(data, lookup("searchResults"), data.header.indexOf(lookup("sort").value), order)
 		}
 		lookup("order").onclick = function(){
 			switchOrder()
@@ -130,7 +133,7 @@ function switchOrder(){
 	} else {
 		lookup("order").innerHTML = "Ascending"
 	}
-	drawTable(fruits, lookup("searchResults"), fruits.header.indexOf(lookup("sort").value), order)
+	drawTable(data, lookup("searchResults"), data.header.indexOf(lookup("sort").value), order)
 }
 
 
@@ -185,6 +188,34 @@ function dropDown(ele, options) { //make dropdown based on elements
 function deleteTable(table){
 	table.innerHTML = "";
 	return table
+}
+function initializeSheet(){
+	var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1kpVkIZLgZFwbLaAmKP3QEs1fuznMe0dgQH8SpO4HOoI/edit?usp=sharing';
+
+		  function init() {
+			Tabletop.init( { key: publicSpreadsheetUrl,
+							 callback: showInfo,
+							 simpleSheet: true } )
+		  }
+
+		  function showInfo(data, tabletop) {
+			alert('Successfully processed!')
+			dataa = data;
+			initializeDB()
+		  }
+
+		  window.addEventListener('DOMContentLoaded', init)
+}
+
+function parseDataa(dataParse){ //parse data from spreadsheet
+	var tempData = {
+		things: [],
+	}
+	tempData.header = Object.keys(dataParse[0])
+	dataParse.forEach(datum => {
+		tempData.things.push(Object.values(datum));
+	})
+	return tempData
 }
 
 
