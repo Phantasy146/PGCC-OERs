@@ -79,3 +79,12 @@ table tr:first-child{
 	align-items: right;
 	width: 100%;
 }
+.sectionHeader {
+	font-size: 10vmin;
+}
+.sectionText {
+	text-indent: 5%
+}
+.infoText {
+	margin: 2vw;
+}
