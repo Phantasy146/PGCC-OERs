@@ -77,19 +77,44 @@ var app = {
 };
 function createTable(object, table){
 	//iterate through object
+	var urlColumn;
 	var row = table.insertRow(-1) //insert header row
+	i = 0
 	object.header.forEach(head => {
-		row.classList.add("header") //make header
-		var cell = row.insertCell(-1)
-		cell.innerHTML = head //set value to element in header
+		if (head == "Url"){
+			urlColumn = i //check if column is urlcolumn
+		} else {
+			row.classList.add("header") //make header
+			var cell = row.insertCell(-1)
+			cell.innerHTML = head //set value to element in header
+		}
+		i++
 	})
+	var allUrls = [] 
+	object.things.forEach(thing => {
+		allUrls.push(thing[urlColumn]) //add all urls to one list
+	})
+	console.log(allUrls)
+	j = 0
 	object.things.forEach(thing => {
 		var row = table.insertRow(-1) //create row for each element in object
+		k = 0
 		for (var innerThing in thing){
 			//create cell for each value in object
-			var cell = row.insertCell(-1)
-			cell.innerHTML = thing[innerThing]
+			if (k != urlColumn){
+				var cell = row.insertCell(-1)
+				if (k == 0) {
+					newLink = cell.appendChild(document.createElement("a"))
+					newLink.href = allUrls[j]
+					newLink.target ="_blank"
+					newLink.innerHTML = thing[innerThing]
+				} else {
+					cell.innerHTML = thing[innerThing]
+				}
+			}
+			k++
 		}
+		j++
 	})
 }
 function initializeDB(){
