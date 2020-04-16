@@ -94,7 +94,6 @@ function createTable(object, table){
 	object.things.forEach(thing => {
 		allUrls.push(thing[urlColumn]) //add all urls to one list
 	})
-	console.log(allUrls)
 	j = 0
 	object.things.forEach(thing => {
 		var row = table.insertRow(-1) //create row for each element in object
@@ -140,7 +139,6 @@ function initializeDB(){
 function drawTable(array, table, sorting, descending = false){
 	table = deleteTable(table) //delete all rows in table
 	array.things.sort(function(a, b){
-		console.log(sorting)
 		if (a[sorting]== b[sorting]) {
         return 0;
     }
