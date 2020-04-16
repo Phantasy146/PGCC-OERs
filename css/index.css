@@ -44,3 +44,19 @@ html, body {
 	border-style: solid;
 	background-image: linear-gradient(to bottom, #c8ce9c, #807554);
 }
+table { 
+	border: solid; 
+	border-collapse: collapse; 
+}
+table td { 
+	border-left:solid; 
+}
+table td:first-child { 
+	border-left: none; 
+}
+table tr{
+	border-top: solid;
+}
+table tr:first-child{
+	border-top: none;
+}
