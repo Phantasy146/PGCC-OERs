@@ -37,6 +37,7 @@ html, body {
 	background: linear-gradient(to bottom, #c8ce9c, #807554);
 	height: 100%;
 	max-width: 40%;
+	overflow-x: scroll;
 }
 .tabs {
 	height: 5vh;
@@ -44,7 +45,6 @@ html, body {
 	padding: 0;
 	border-style: solid;
 	background: linear-gradient(to bottom, #c8ce9c, #807554);
-	overflow: scroll;
 }
 table { 
 	border-top: solid; 
