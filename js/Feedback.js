@@ -47,8 +47,10 @@ app.initialize();
 grecaptcha.render()
 function runCaptcha(){
 	document.getElementsByClassName("form")[0].style.display = ""
+	document.getElementsByClassName("g-recaptcha")[0].style.display = "none"
 }
 function disableForm(){
 	document.getElementsByClassName("form")[0].style.display = "none"
+	document.getElementsByClassName("g-recaptcha")[0].style.display = ""
 }
 
