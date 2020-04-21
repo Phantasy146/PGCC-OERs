@@ -43,7 +43,7 @@ html, body {
 	padding: 0;
 	border-style: solid;
 	background: linear-gradient(to bottom, #c8ce9c, #807554);
-	overflow-x: scroll;
+	overflow: scroll;
 }
 table { 
 	border-top: solid; 
