@@ -36,7 +36,6 @@ html, body {
 	border-color: black;
 	background: linear-gradient(to bottom, #c8ce9c, #807554);
 	height: 100%;
-	overflow: scroll;
 }
 .tabs {
 	height: 5vmax;
