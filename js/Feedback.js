@@ -46,10 +46,9 @@ var app = {
 app.initialize();
 grecaptcha.render()
 function runCaptcha(){
-	if (grecaptcha.getResponse()){
-		document.getElementsByClassName("form")[0].style.display = ""
-	} else {
-		document.getElementsByClassName("form")[0].style.display = "none"
-	}
+	document.getElementsByClassName("form")[0].style.display = ""
+}
+function disableForm(){
+	document.getElementsByClassName("form")[0].style.display = "none"
 }
 
