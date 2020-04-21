@@ -104,3 +104,9 @@ table tr:first-child{
 	max-width: 40%;
 	background: linear-gradient(to bottom, #cfc05f, #c19e24);
 }
+.g-recaptcha {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 2vh;
+}
