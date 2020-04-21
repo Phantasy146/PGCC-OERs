@@ -45,5 +45,5 @@ var app = {
 
 app.initialize();
 grecaptcha.ready(function() {
-    grecaptcha.execute('6LfoVuwUAAAAANza29P-UkWoB92ELnOax8ZDa1OR', {action: 'homepage'});
+    grecaptcha.execute('6LfoVuwUAAAAAJYVm260XDlflVtLhK5OEGMRiix0', {action: 'homepage'});
 });
