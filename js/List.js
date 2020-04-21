@@ -175,20 +175,25 @@ function searchDatabase(table, input) {
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
+	showing = false;
+    td = Array.prototype.slice.call(tr[i].getElementsByTagName("td"));
 	if (tr[i].classList.contains("header")){ //check if header
 		continue;
 	}
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-		foundAny = true
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
+	td.forEach(ele => {
+		if (ele) {
+		  txtValue = ele.textContent || ele.innerText;
+		  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			tr[i].style.display = "";
+			foundAny = true
+			showing = true;
+			}
+		}
+	  })
+	  if (!showing) {
+			tr[i].style.display = "none";
+		  }
+	}
   return foundAny
 }
 
