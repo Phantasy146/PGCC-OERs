@@ -39,12 +39,12 @@ html, body {
 	overflow: scroll;
 }
 .tabs {
-	height: 5vh;
+	height: 5vmax;
 	margin: 0;
 	padding: 0;
 	border-style: solid;
 	background: linear-gradient(to bottom, #c8ce9c, #807554);
-	overflow-y: scroll;
+	overflow-x: scroll;
 }
 table { 
 	border-top: solid; 
