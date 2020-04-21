@@ -110,3 +110,8 @@ table tr:first-child{
 	justify-content: space-around;
 	margin-top: 2vh;
 }
+.twitter-timeline {
+	width: 100vw;
+	height: 81vh;
+	display: flex;
+}
