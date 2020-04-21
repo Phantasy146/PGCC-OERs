@@ -44,10 +44,8 @@ var app = {
 };
 
 app.initialize();
-grecaptcha.ready(function() {
-    grecaptcha.execute('6LfZWewUAAAAAMrVTDXs8ksEG7i2zMGY1CX0N2dU', {action: 'homepage'}).then(function(token){
-		alert("IT WORKED")
-	});
-});
 grecaptcha.render()
+function runCaptcha(){
+	document.getElementsByClassName("form")[0].style.display = ""
+}
 

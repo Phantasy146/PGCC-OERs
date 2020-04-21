@@ -34,6 +34,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Hello World</title>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<script src="js/Feedback.js"></script>
     </head>
     <body>
         <div class="heading">
@@ -46,8 +47,8 @@
 			<a href="List.html"><button class="links">List of OERs</button></a>
 			<a href="Feedback.html"><button class="current">Submit Feedback</button></a>
 		</div>
-		<div class="g-recaptcha" data-sitekey="6LfZWewUAAAAAMrVTDXs8ksEG7i2zMGY1CX0N2dU"></div>
-		<div class="form">
+		<div class="g-recaptcha" data-sitekey="6LfZWewUAAAAAMrVTDXs8ksEG7i2zMGY1CX0N2dU" data-callback="runCaptcha"></div>
+		<div class="form" style="display: none">
 			<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSftqpgQ6N9FG2dLity3WgFgczpB0rOGphnokdmpS4nBXrs3hA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 		</div>
 
