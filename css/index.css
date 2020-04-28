@@ -127,4 +127,11 @@ table tr:first-child{
 	 margin-top: 1vh;
 	 float: right;
 	 position: absolute;
+	 color: #9c5500;
+	 text-decoration: underline;
+}
+.doc {
+	width: 100vw;
+	height: 83vh;
+	overflow: hidden;
 }
