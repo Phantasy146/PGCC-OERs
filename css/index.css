@@ -26,6 +26,7 @@ html, body {
 	background-color: #9e9b76;
 	height: 12vh;
 	border-style: solid;
+	position: relative;
 }
 .links {
 	color: black;
@@ -117,4 +118,13 @@ table tr:first-child{
 	width: 100vw;
 	height: 81vh;
 	display: flex;
+}
+.version
+{
+     top: 0;
+     right: 0;
+	 margin-right: 2vw;
+	 margin-top: 1vh;
+	 float: right;
+	 position: absolute;
 }
