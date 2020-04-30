@@ -229,11 +229,17 @@ function initializeSheet(){
 		  }
 
 		  function showInfo(data, tabletop) {
+			clearTimeout(noNetwork)
 			dataa = data;
 			initializeDB()
 		  }
-
+		  waiting = setTimeout(noNetwork, 3000)
 		  window.addEventListener('DOMContentLoaded', init)
+		  function noNetwork(){
+			  window.removeEventListener('DOMContentLoaded', init)
+			  lookup("none").style.display = ""
+			  lookup("none").innerHTML = "Database link failed. Please check your network connection and try again."
+		  }
 }
 
 function parseDataa(dataParse){ //parse data from spreadsheet
