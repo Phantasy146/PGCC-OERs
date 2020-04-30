@@ -153,6 +153,17 @@ table tr:first-child{
 	 color: #9c5500;
 	 text-decoration: underline;
 }
+.version2
+{
+     bottom: 0;
+     right: 0;
+	 margin-right: 2vw;
+	 margin-bottom: 1vh;
+	 float: right;
+	 position: absolute;
+	 color: #9c5500;
+	 text-decoration: underline;
+}
 .doc {
 	width: 100vw;
 	height: 83vh;
