@@ -21,12 +21,14 @@ html, body {
     padding: 0;
 	font-family: arial;
 	background-color: #f3f3c7;
+	overflow: hidden;
 }
 .heading {
 	background-color: #9e9b76;
 	height: 12vh;
 	border-style: solid;
-	position: relative;
+	display: flex;
+	position: sticky;
 }
 .links {
 	color: black;
@@ -55,33 +57,47 @@ table {
 	border-collapse: collapse; 
 	width: 100%;
 	height: 100%;
+
+}
+thead {
+	background: white;
+	top: 7vh;
+	position: sticky;
+	border-bottom: solid;
 }
 table td { 
 	border-left:solid; 
 }
 table td:first-child { 
-	border-left: none; 
+	border-left: none;
+	border-top: solid;
 }
 table tr{
 	border-top: solid;
 }
 table tr:first-child{
-	border-top: none;
+	border-top: solid;
 }
 .searchBox {
 	border: solid;
-	width: 75vw;
-	height: 75vh;
+	width: 96vw;
+	height: 80vh;
 	margin: auto;
 	margin-top: 2vh;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	overflow: scroll;
 	background-color: white;
+	position: relative;
 }
 .searchBar{
-	display: flex;
 	align-items: right;
 	width: 100%;
+}
+.searchOptions {
+	position: sticky;
+	top: 0;
+	background-color: white;
+	width: 100%;
+	height: 7vh;
 }
 .sectionHeader {
 	font-size: 10vmin;

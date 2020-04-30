@@ -78,14 +78,15 @@ var app = {
 function createTable(object, table){
 	//iterate through object
 	var urlColumn;
-	var row = table.insertRow(-1) //insert header row
+	var header = table.createTHead(-1) //insert header row
 	i = 0
+	var row = header.insertRow()
 	object.header.forEach(head => {
 		if (head == "Url"){
 			urlColumn = i //check if column is urlcolumn
 		} else {
 			row.classList.add("header") //make header
-			var cell = row.insertCell(-1)
+			var cell = row.appendChild(document.createElement("th"))
 			cell.innerHTML = head //set value to element in header
 		}
 		i++
@@ -95,8 +96,9 @@ function createTable(object, table){
 		allUrls.push(thing[urlColumn]) //add all urls to one list
 	})
 	j = 0
+	var body = table.appendChild(document.createElement("tbody"))
 	object.things.forEach(thing => {
-		var row = table.insertRow(-1) //create row for each element in object
+		var row = body.insertRow(-1) //create row for each element in object
 		k = 0
 		for (var innerThing in thing){
 			//create cell for each value in object
