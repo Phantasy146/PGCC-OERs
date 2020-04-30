@@ -229,7 +229,7 @@ function initializeSheet(){
 		  }
 
 		  function showInfo(data, tabletop) {
-			clearTimeout(noNetwork)
+			clearTimeout(waiting)
 			dataa = data;
 			initializeDB()
 		  }
